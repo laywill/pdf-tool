@@ -1,0 +1,11 @@
+services:
+  python-pdf-dev:
+    image: python:3
+    container_name: python-pdf-dev
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    attach: true
+    command: /bin/bash
