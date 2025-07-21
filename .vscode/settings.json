@@ -35,4 +35,12 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+
+    // Python Specific settings
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    "python.analysis.typeCheckingMode": "standard"
 }

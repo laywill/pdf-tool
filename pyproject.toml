@@ -1,14 +1,10 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "gimmie"
+name = "pdf-tool"
 description = "A tool to download files from a list of URLs"
 readme = "README.md"
 requires-python = ">=3.9"
 license-files = ["LICENSE"]
-dynamic = ["version"]
+version = "0.1.0"
 authors = [
   {name = "Will Lay", email = "laywill@gmail.com"},
 ]
@@ -20,7 +16,7 @@ classifiers = [
     #   3 - Alpha
     #   4 - Beta
     #   5 - Production/Stable
-    "Development Status :: 4 - Beta",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
@@ -31,7 +27,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "requests>=2.25.0",
+    "pypdf>=5.8.0",
 ]
 
 [project.optional-dependencies]
@@ -42,23 +38,12 @@ dev = [
 test = [
     "pytest>=7.0.0",
     "pytest-cov>=4.1.0",
-    "responses>=0.23.0",
 ]
-
-[project.scripts]
-gimmie = "gimmie.main:main"
-
-[tool.hatch.version]
-path = "src/gimmie/__init__.py"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/gimmie"]
 
 [tool.hatch.envs.test]
 dependencies = [
     "pytest>=7.0.0",
     "pytest-cov>=4.1.0",
-    "responses>=0.23.0",
 ]
 
 [tool.pytest.ini_options]
@@ -72,4 +57,4 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["gimmie"]
+source = ["pdf-tool"]
